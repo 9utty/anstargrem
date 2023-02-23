@@ -5,7 +5,7 @@ import { Icon, IconName } from "./Icons";
 export const TabIcon: React.FC<{
   visibleBadge: boolean;
   iconName: IconName;
-  iconColer: string;
+  iconColor: string;
   iconSize: number;
 }> = (props) => {
   if (props.visibleBadge) {
@@ -14,7 +14,7 @@ export const TabIcon: React.FC<{
         <Icon
           name={props.iconName}
           size={props.iconSize}
-          color={props.iconColer}
+          color={props.iconColor}
         />
       </Badge>
     );
@@ -23,7 +23,7 @@ export const TabIcon: React.FC<{
     <Icon
       name={props.iconName} //
       size={props.iconSize} //
-      color={props.iconColer} //
+      color={props.iconColor} //
     />
   );
 };
