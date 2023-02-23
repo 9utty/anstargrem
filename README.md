@@ -29,3 +29,48 @@
 - 언제 컴포넌트를 만들어 재사용 하는가?
   - 제일 작은 단위는 우선적으로 컴포넌트로 만들어 재사용
   - Molcule이상의 단계뜰 중에서 3회 이상 반복되면 컴포넌트로 만든다
+
+<hr />
+
+# React Hook에 대해서
+
+## 1. What is Hook?
+
+- hook이란?
+
+  - react 16.8 버전에서 새로 추가된 기능이다
+  - functional component에서도 state와 기타 다른 사이드 이펙트를 다루기 위해 탄생되었다
+
+- functional component?
+
+  - hook 탄생 이전에는 state를 가질 수가 없었기 때문에 주로 dumb component로만 활용
+  - hook의 등장으로 주목받기 시작했다
+
+- 왜 hook을 만들었는가?
+
+  - 첫 번째, 컴포넌트간 상태 관련 로직 재사용하기 어려웠다
+    - 매번 같은 상태 관리 로직을 Copy & Paste 공통화 되지 않다보니 컴포넌트 마다 변경사항을 수정해야 하는 어려움
+  - 두 번째, 컴포넌트가 커질수록 복잡해지는 로직이 문제가 있다
+    - componentDidmount에서 너무 많은 일을 하게 됨
+    - Ex) 컴포넌트 마운트시 api 호출 및 event listener를 subscribe 단일 책임 원칙(SRP)에서 벗어나게 되는 일이 생길 수 있다
+  - 세 번째, 혼란을 주는 class
+
+    - 클래스는 혼동되기 쉽다
+    - class this 키워드에서 오는 좋지 못한 경험
+
+    ```
+    export class ComponentA extends React.Component {
+      alertUserNAme() {
+        alert('hi' + this.props.userName) // 호출 당시의 기대했던 this.props.userName과 실행 당시의 값이 다르게 됨
+      }
+
+      OnpressButton() {
+        setTimeout(() => {
+          alertUserName();
+        }, 3000)
+      }
+    }
+    ```
+
+- hook 사용의 규칙(1)
+  - 모든 hook을 사용할때 최상단에서 호출 하여야만 함
