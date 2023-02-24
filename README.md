@@ -10,7 +10,7 @@
 ## 1. 의도하지 않은 변경점을 최소화하기 위해서는?
 
 - 컴포넌트를 제일 작은 단위부터 만들어가자로 접근할 수 있다
-  - Atomic design pettern이라고 한다
+  - Atomic design pattern이라고 한다
     - 작은단위부터 큰 단위까지의 컴포넌트를 조합해 만들어가는 것
       - Lego조립하는것과 같은 개념이다
 
@@ -31,7 +31,7 @@
 
 - 언제 컴포넌트를 만들어 재사용 하는가?
   - 제일 작은 단위는 우선적으로 컴포넌트로 만들어 재사용
-  - Molcule이상의 단계뜰 중에서 3회 이상 반복되면 컴포넌트로 만든다
+  - Molecule이상의 단계들 중에서 3회 이상 반복되면 컴포넌트로 만든다
 
 <br>
 <br>
@@ -63,7 +63,7 @@
   - 첫 번째, 컴포넌트간 상태 관련 로직 재사용하기 어려웠다
     - 매번 같은 상태 관리 로직을 Copy & Paste 공통화 되지 않다보니 컴포넌트 마다 변경사항을 수정해야 하는 어려움
   - 두 번째, 컴포넌트가 커질수록 복잡해지는 로직이 문제가 있다
-    - componentDidmount에서 너무 많은 일을 하게 됨
+    - componentDidMount에서 너무 많은 일을 하게 됨
     - Ex) 컴포넌트 마운트시 api 호출 및 event listener를 subscribe 단일 책임 원칙(SRP)에서 벗어나게 되는 일이 생길 수 있다
   - 세 번째, 혼란을 주는 class
 
@@ -77,7 +77,7 @@
         alert("hi" + this.props.userName); // 호출 당시의 기대했던 this.props.userName과 실행 당시의 값이 다르게 됨
       }
 
-      OnpressButton() {
+      OnPressButton() {
         setTimeout(() => {
           alertUserName();
         }, 3000);
@@ -139,7 +139,7 @@
 
   ```javascript
   export const ComponentA = (props) => {
-    const currentAppState = useAppState(); //acitve, background, inactive(only ios)
+    const currentAppState = useAppState(); //active, background, inactive(only ios)
     {...etc code}
   }
   ```
