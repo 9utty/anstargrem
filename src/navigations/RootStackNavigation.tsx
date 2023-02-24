@@ -6,6 +6,8 @@ import {
 } from "@react-navigation/native-stack/lib/typescript/src/types";
 import React from "react";
 import { FeedInfo } from "../@types/FeedInfo";
+import { AddFeedScreen } from "../screens/AddFeedScreen";
+import { FeedListScreen } from "../screens/FeedListScreen";
 import { BottomTabNavigation } from "./BottomTabNavigation";
 
 export type RootStackParamList = {
