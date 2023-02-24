@@ -12,7 +12,7 @@ export type BottomTabParamList = {
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
-export const createBottomTabNavigation = () => {
+export const BottomTabNavigation = () => {
   return (
     <BottomTab.Navigator
       screenOptions={({ route }) => {
