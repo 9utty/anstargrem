@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 import mobileAds, {
   BannerAd,
   BannerAdSize,
+  TestIds,
 } from "react-native-google-mobile-ads";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
